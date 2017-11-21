@@ -46,42 +46,42 @@ Redux는 작습니다. (2kB, 의존성을 포함한 크기).
 Redux는 [Flux](http://facebook.github.io/flux/)의 아이디어를 발전 시켰습니다. Redux는 [Elm](https://github.com/evancz/elm-architecture-tutorial/)으로부터 영감을 얻어 Flux 의 복잡성을 개선하였습니다.  
 사용 여부와 관계없이 Redux는 시작하는 데 몇 분 밖에 걸리지 않습니다.
 
-### Installation
+### 설치
 
-To install the stable version:
+안정화 버전 설치:
 
 ```
 npm install --save redux
 ```
 
-This assumes you are using [npm](https://www.npmjs.com/) as your package manager.  
+여기서는 패키지 관리자로 [npm](https://www.npmjs.com/)을 사용한다고 가정합니다.  
 
-If you're not, you can [access these files on unpkg](https://unpkg.com/redux/), download them, or point your package manager to them.
+그렇지 않은 경우 [unpkg](https://unpkg.com/redux/), 다운로드하거나 패키지 관리자를 설정할 수 있습니다.
 
-Most commonly people consume Redux as a collection of [CommonJS](http://webpack.github.io/docs/commonjs.html) modules. These modules are what you get when you import `redux` in a [Webpack](https://webpack.js.org/), [Browserify](http://browserify.org/), or a Node environment. If you like to live on the edge and use [Rollup](http://rollupjs.org), we support that as well.
+가장 일반적으로 사람들은 [CommonJS](http://webpack.github.io/docs/commonjs.html) 모듈 모음으로 Redux를 사용합니다. 이러한 모듈은 [Webpack](https://webpack.js.org/), [Browserify](http://browserify.org/) 또는 노드 환경에서`redux`를 가져올 때 얻을 수있는 모듈입니다. 물론, Redux는 [Rollup](http://rollupjs.org) 모듈 또한 지원합니다.
 
-If you don't use a module bundler, it's also fine. The `redux` npm package includes precompiled production and development [UMD](https://github.com/umdjs/umd) builds in the [`dist` folder](https://unpkg.com/redux/dist/). They can be used directly without a bundler and are thus compatible with many popular JavaScript module loaders and environments. For example, you can drop a UMD build as a [`<script>` tag](https://unpkg.com/redux/dist/redux.js) on the page, or [tell Bower to install it](https://github.com/reactjs/redux/pull/1181#issuecomment-167361975). The UMD builds make Redux available as a `window.Redux` global variable.
+모듈 번들을 사용하지 않는다면 괜찮습니다. `redux` npm 패키지에는 [dist](https://unpkg.com/redux/dist/)에 미리 컴파일 된 제작 및 개발 [UMD](https://github.com/umdjs/umd) 빌드가 포함되어 있습니다. 그들은 번들러없이 직접 사용할 수 있으므로 많은 인기있는 JavaScript 모듈 로더 및 환경과 호환됩니다. 예를 들어 UMD 빌드를 페이지의 [`<script>`태그](https://unpkg.com/redux/dist/redux.js) 또는 [Bower을 통한 설치](https://github.com/reactjs/redux/pull/1181#issuecomment-167361975). UMD 빌드는 Redux를`window.Redux` 글로벌 변수로 사용할 수 있도록합니다.
 
-The Redux source code is written in ES2015 but we precompile both CommonJS and UMD builds to ES5 so they work in [any modern browser](http://caniuse.com/#feat=es5). You don't need to use Babel or a module bundler to [get started with Redux](https://github.com/reactjs/redux/blob/master/examples/counter-vanilla/index.html).
+Redux 소스 코드는 ES2015로 작성되었지만 CommonJS 및 UMD 빌드를 모두 ES5로 사전 컴파일하여 [모든 최신 브라우저](http://caniuse.com/#feat=es5)에서 작동합니다. [Redux 시작하기](https://github.com/reactjs/redux/blob/master/examples/counter-vanilla/index.html)에는 Babel이나 모듈 번들러를 사용할 필요가 없습니다.
 
-#### Complementary Packages
+#### Redux를 하는데 함께 쓰면 좋은 패키지
 
-Most likely, you'll also need [the React bindings](https://github.com/reactjs/react-redux) and [the developer tools](https://github.com/gaearon/redux-devtools).
+대부분의 경우 [React bindings](https://github.com/reactjs/react-redux) 및 [developer tools](https://github.com/gaearon/redux-devtools)도 필요합니다.
 
 ```
 npm install --save react-redux
 npm install --save-dev redux-devtools
 ```
 
-Note that unlike Redux itself, many packages in the Redux ecosystem don't provide UMD builds, so we recommend using CommonJS module bundlers like [Webpack](https://webpack.js.org/) and [Browserify](http://browserify.org/) for the most comfortable development experience.
+Redux 자체와 달리 Redux 에코 시스템의 많은 패키지는 UMD 빌드를 제공하지 않으므로 [Webpack](https://webpack.js.org/) 및 [Browserify](http://browserify.org/)와 같은 CommonJS 모듈 번들을 사용을 통하여 편안한 개발 경험을 얻을 수 있습니다.
 
-### The Gist
+### 요점
 
-The whole state of your app is stored in an object tree inside a single *store*.  
-The only way to change the state tree is to emit an *action*, an object describing what happened.  
-To specify how the actions transform the state tree, you write pure *reducers*.
+1. 앱의 전체 상태는 단일 *`스토어`* 내의 오브젝트 트리에 저장됩니다.
+2. 상태 트리를 변경하는 유일한 방법은 어떤 일이 일어 났는지 설명하는 객체 인 *`action`* 을 내보내는 것입니다.
+3. 동작이 상태 트리를 변환하는 방법을 지정하려면 순수한 *`reducers`* 를 작성합니다.
 
-That's it!
+이게 전부다!
 
 ```js
 import { createStore } from 'redux'
