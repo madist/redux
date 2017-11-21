@@ -44,7 +44,7 @@ Redux는 작습니다. (2kB, 의존성을 포함한 크기).
 ### 영향
 
 Redux는 [Flux](http://facebook.github.io/flux/)의 아이디어를 발전 시켰습니다. Redux는 [Elm](https://github.com/evancz/elm-architecture-tutorial/)으로부터 영감을 얻어 Flux 의 복잡성을 개선하였습니다.  
-Whether you have used them or not, Redux only takes a few minutes to get started with.
+사용 여부와 관계없이 Redux는 시작하는 데 몇 분 밖에 걸리지 않습니다.
 
 ### Installation
 
