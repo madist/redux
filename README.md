@@ -62,7 +62,7 @@ npm install --save redux
 
 모듈 번들을 사용하지 않는다면 괜찮습니다. `redux` npm 패키지에는 [dist](https://unpkg.com/redux/dist/)에 미리 컴파일 된 제작 및 개발 [UMD](https://github.com/umdjs/umd) 빌드가 포함되어 있습니다. 그들은 번들러없이 직접 사용할 수 있으므로 많은 인기있는 JavaScript 모듈 로더 및 환경과 호환됩니다. 예를 들어 UMD 빌드를 페이지의 [`<script>`태그](https://unpkg.com/redux/dist/redux.js) 또는 [Bower을 통한 설치](https://github.com/reactjs/redux/pull/1181#issuecomment-167361975). UMD 빌드는 Redux를`window.Redux` 글로벌 변수로 사용할 수 있도록합니다.
 
-Redux 소스 코드는 ES2015로 작성되었지만 CommonJS 및 UMD 빌드를 모두 ES5로 사전 컴파일하여 [모든 최신 브라우저](http://caniuse.com/#feat=es5)에서 작동합니다. [Redux 시작하기](https://github.com/reactjs/redux/blob/master/examples/counter-vanilla/index.html)에는 Babel이나 모듈 번들러를 사용할 필요가 없습니다.
+Redux 소스 코드는 ES2015로 작성되었지만 CommonJS 및 UMD 빌드를 모두 ES5로 사전 컴파일하여 [모든 최신 브라우저](http://caniuse.com/#feat=es5)에서 작동합니다. [Redux 시작하기](https://github.com/reactjs/redux/blob/master/examples/counter-vanilla/README.md)에는 Babel이나 모듈 번들러를 사용할 필요가 없습니다.
 
 #### Redux를 하는데 함께 쓰면 좋은 패키지
 
@@ -163,14 +163,14 @@ If you enjoyed my course, consider supporting Egghead by [buying a subscription]
 
 ### 문서
 
-* [소개](https://madist.gitbooks.io/redux-ko/content/docs/introduction/index.html)
-* [기본](https://madist.gitbooks.io/redux-ko/content/docs/basics/index.html)
-* [고급](https://madist.gitbooks.io/redux-ko/content/docs/advanced/index.html)
-* [따라하기](https://madist.gitbooks.io/redux-ko/content/docs/recipes/index.html)
-* [FAQ](https://madist.gitbooks.io/redux-ko/content/docs/FAQ.html)
-* [문제해결](https://madist.gitbooks.io/redux-ko/content/docs/Troubleshooting.html)
-* [용어해설](https://madist.gitbooks.io/redux-ko/content/docs/Glossary.html)
-* [API 문서](https://madist.gitbooks.io/redux-ko/content/docs/api/index.html)
+* [소개](/docs/introduction/README.md)
+* [기본](/docs/basics/README.md)
+* [고급](/docs/advanced/README.md)
+* [따라하기](/docs/recipes/README.md)
+* [FAQ](/docs/FAQ.md)
+* [문제해결](/docs/Troubleshooting.md)
+* [용어해설](/docs/Glossary.md)
+* [API 문서](/docs/api/README.md)
 
 For PDF, ePub, and MOBI exports for offline reading, and instructions on how to create them, please see: [paulkogel/redux-offline-docs](https://github.com/paulkogel/redux-offline-docs).
 
@@ -180,16 +180,16 @@ For Offline docs, please see: [devdocs](http://devdocs.io/redux/)
 
 Almost all examples have a corresponding CodeSandbox sandbox. This is an interactive version of the code that you can play with online.
 
-* [Counter Vanilla](https://madist.gitbooks.io/redux-ko/content/docs/introduction/Examples.html#counter-vanilla) ([source](https://github.com/reactjs/redux/tree/master/examples/counter-vanilla))
-* [Counter](https://madist.gitbooks.io/redux-ko/content/docs/introduction/Examples.html#counter) ([source](https://github.com/reactjs/redux/tree/master/examples/counter), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/counter))
-* [Todos](https://madist.gitbooks.io/redux-ko/content/docs/introduction/Examples.html#todos) ([source](https://github.com/reactjs/redux/tree/master/examples/todos), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/todos))
-* [Todos with Undo](https://madist.gitbooks.io/redux-ko/content/docs/introduction/Examples.html#todos-with-undo) ([source](https://github.com/reactjs/redux/tree/master/examples/todos-with-undo), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/todos-with-undo))
-* [TodoMVC](https://madist.gitbooks.io/redux-ko/content/docs/introduction/Examples.html#todomvc) ([source](https://github.com/reactjs/redux/tree/master/examples/todomvc), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/todomvc))
-* [Shopping Cart](https://madist.gitbooks.io/redux-ko/content/docs/introduction/Examples.html#shopping-cart) ([source](https://github.com/reactjs/redux/tree/master/examples/shopping-cart), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/shopping-cart))
-* [Tree View](https://madist.gitbooks.io/redux-ko/content/docs/introduction/Examples.html#tree-view) ([source](https://github.com/reactjs/redux/tree/master/examples/tree-view), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/tree-view))
-* [Async](https://madist.gitbooks.io/redux-ko/content/docs/introduction/Examples.html#async) ([source](https://github.com/reactjs/redux/tree/master/examples/async), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/async))
-* [Universal](https://madist.gitbooks.io/redux-ko/content/docs/introduction/Examples.html#universal) ([source](https://github.com/reactjs/redux/tree/master/examples/universal))
-* [Real World](https://madist.gitbooks.io/redux-ko/content/docs/introduction/Examples.html#real-world) ([source](https://github.com/reactjs/redux/tree/master/examples/real-world), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/real-world))
+* [Counter Vanilla](/docs/introduction/Examples.html#counter-vanilla) ([source](https://github.com/reactjs/redux/tree/master/examples/counter-vanilla))
+* [Counter](/docs/introduction/Examples.html#counter) ([source](https://github.com/reactjs/redux/tree/master/examples/counter), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/counter))
+* [Todos](/docs/introduction/Examples.html#todos) ([source](https://github.com/reactjs/redux/tree/master/examples/todos), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/todos))
+* [Todos with Undo](/docs/introduction/Examples.html#todos-with-undo) ([source](https://github.com/reactjs/redux/tree/master/examples/todos-with-undo), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/todos-with-undo))
+* [TodoMVC](/docs/introduction/Examples.html#todomvc) ([source](https://github.com/reactjs/redux/tree/master/examples/todomvc), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/todomvc))
+* [Shopping Cart](/docs/introduction/Examples.html#shopping-cart) ([source](https://github.com/reactjs/redux/tree/master/examples/shopping-cart), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/shopping-cart))
+* [Tree View](/docs/introduction/Examples.html#tree-view) ([source](https://github.com/reactjs/redux/tree/master/examples/tree-view), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/tree-view))
+* [Async](/docs/introduction/Examples.html#async) ([source](https://github.com/reactjs/redux/tree/master/examples/async), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/async))
+* [Universal](/docs/introduction/Examples.html#universal) ([source](https://github.com/reactjs/redux/tree/master/examples/universal))
+* [Real World](/docs/introduction/Examples.html#real-world) ([source](https://github.com/reactjs/redux/tree/master/examples/real-world), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/real-world))
 
 If you're new to the NPM ecosystem and have troubles getting a project up and running, or aren't sure where to paste the gist above, check out [simplest-redux-example](https://github.com/jackielii/simplest-redux-example) that uses Redux together with React and Browserify.
 
