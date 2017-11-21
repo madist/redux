@@ -1,12 +1,13 @@
 # <a href='http://redux.js.org'><img src='https://camo.githubusercontent.com/f28b5bc7822f1b7bb28a96d8d09e7d79169248fc/687474703a2f2f692e696d6775722e636f6d2f4a65567164514d2e706e67' height='60'></a>
 
-Redux is a predictable state container for JavaScript apps.  
-(Not to be confused with a WordPress framework – [Redux Framework](https://reduxframework.com/).)
+Redux는 JavaScript 애플리케이션을위한 예측 가능한 상태 컨테이너입니다.  
+(워드프레스 프레임웍과 혼동하지 마세요. – [Redux Framework](https://reduxframework.com/).)
 
-It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. On top of that, it provides a great developer experience, such as [live code editing combined with a time traveling debugger](https://github.com/gaearon/redux-devtools).
+Redux는 일관성있게 작동하고 다양한 환경 (클라이언트, 서버 및 기본)에서 실행되는 응용 프로그램을 작성하고 테스트하기 쉽도록 도와줍니다. 그뿐 아니라 다음과 같은 훌륭한 개발자 경험을 제공합니다. [live code editing combined with a time traveling debugger](https://github.com/gaearon/redux-devtools).
 
-You can use Redux together with [React](https://facebook.github.io/react/), or with any other view library.  
-It is tiny (2kB, including dependencies).
+당신은 [React](https://facebook.github.io/react/)와 함께 Redux 를 사용할 수 있습니다. 물론, 다른 렌더링 라이브러리와 함께 사용할 수도 있죠.  
+
+Redux는 작습니다. (2kB, 의존성을 포함한 크기).
 
 [![build status](https://img.shields.io/travis/reactjs/redux/master.svg?style=flat-square)](https://travis-ci.org/reactjs/redux)
 [![npm version](https://img.shields.io/npm/v/redux.svg?style=flat-square)](https://www.npmjs.com/package/redux)
@@ -15,11 +16,11 @@ It is tiny (2kB, including dependencies).
 [![#rackt on freenode](https://img.shields.io/badge/irc-%23rackt%20%40%20freenode-61DAFB.svg?style=flat-square)](https://webchat.freenode.net/)
 [![Changelog #187](https://img.shields.io/badge/changelog-%23187-lightgrey.svg?style=flat-square)](https://changelog.com/187)
 
->**Learn Redux from its creator:**  
+>**Redux창시자로부터 Redux 배우기:**  
 >**[Part 1: Getting Started with Redux](https://egghead.io/series/getting-started-with-redux) (30 free videos)**<br>
 >**[Part 2: Building React Applications with Idiomatic Redux](https://egghead.io/courses/building-react-applications-with-idiomatic-redux) (27 free videos)**
 
-### Testimonials
+### 사용자 평가 
 
 >[“Love what you're doing with Redux”](https://twitter.com/jingc/status/616608251463909376)  
 >Jing Chen, creator of Flux
@@ -30,18 +31,19 @@ It is tiny (2kB, including dependencies).
 >[“It's cool that you are inventing a better Flux by not doing Flux at all.”](https://twitter.com/andrestaltz/status/616271392930201604)  
 >André Staltz, creator of Cycle
 
-### Before Proceeding Further
+### 계속 진행하기 전에
 
 >**Also read:**  
->**[You Might Not Need Redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)**
+>**[당신은 Redux 필요하지 않을 수도 있습니다](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)**
 
-### Developer Experience
+### 개발자 경험
 
-I wrote Redux while working on my React Europe talk called [“Hot Reloading with Time Travel”](https://www.youtube.com/watch?v=xsSnOQynTHs). My goal was to create a state management library with minimal API but completely predictable behavior, so it is possible to implement logging, hot reloading, time travel, universal apps, record and replay, without any buy-in from the developer.
+나는 Redux 를 사용하였습니다. Europe Talk 리액트 작업
+ [“Hot Reloading with Time Travel”](https://www.youtube.com/watch?v=xsSnOQynTHs)을 할때요. 내 목표는 최소한의 API로 상태 관리 라이브러리를 만드는 것이 었습니다. 물론, 완벽한 행동 예측을 통해서 로깅, 핫 리로딩, 시간 여행, 범용 앱, 기록 및 재생을 구현할 수 있습니다. 
 
-### Influences
+### 영향
 
-Redux evolves the ideas of [Flux](http://facebook.github.io/flux/), but avoids its complexity by taking cues from [Elm](https://github.com/evancz/elm-architecture-tutorial/).  
+Redux는 [Flux](http://facebook.github.io/flux/)의 아이디어를 발전 시켰습니다. Redux는 [Elm](https://github.com/evancz/elm-architecture-tutorial/)으로부터 영감을 얻어 Flux 의 복잡성을 개선하였습니다.  
 Whether you have used them or not, Redux only takes a few minutes to get started with.
 
 ### Installation
