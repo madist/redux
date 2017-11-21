@@ -87,16 +87,13 @@ Redux 자체와 달리 Redux 에코 시스템의 많은 패키지는 UMD 빌드�
 import { createStore } from 'redux'
 
 /**
- * This is a reducer, a pure function with (state, action) => state signature.
- * It describes how an action transforms the state into the next state.
+ * 이것은 Reducer 입니다, (state, action) => state 구조의 순수 함수입니다.
+ * 액션이 상태를 다음 상태로 변환하는 방법을 설명합니다.
  *
- * The shape of the state is up to you: it can be a primitive, an array, an object,
- * or even an Immutable.js data structure. The only important part is that you should
- * not mutate the state object, but return a new object if the state changes.
+ * 상태의 모양은 다양합니다 : state는 프리미티브, 배열, 객체 일 수 있습니다.
+ * 또는 Immutable.js 데이터 구조도 가능합니다. 중요한 것은 상태 객체를 직접 변경해서는 안됩니다. 상태가 변경되면 기존객체를 바꾸는 것이 아니라, 새로운 객체를 반환해야합니다.
  *
- * In this example, we use a `switch` statement and strings, but you can use a helper that
- * follows a different convention (such as function maps) if it makes sense for your
- * project.
+ * 이 예제에서 우리는`switch` 문과 문자열을 사용합니다. 그러나 프로젝트에 적합한 경우 다른 규칙 (예 : 함수 맵)을 따르는 helper를 사용해도 좋습니다.
  */
 function counter(state = 0, action) {
   switch (action.type) {
@@ -109,20 +106,21 @@ function counter(state = 0, action) {
   }
 }
 
-// Create a Redux store holding the state of your app.
-// Its API is { subscribe, dispatch, getState }.
+// Redux Store 를 생성하여 앱의 상태를 저장합니다.
+// API 는 { subscribe, dispatch, getState } 이 있습니다.
 let store = createStore(counter)
 
-// You can use subscribe() to update the UI in response to state changes.
-// Normally you'd use a view binding library (e.g. React Redux) rather than subscribe() directly.
-// However it can also be handy to persist the current state in the localStorage.
+// 상태 변경에 대한 응답으로 subscribe()를 사용하여 UI를 업데이트 할 수 있습니다.
+// 일반적으로 직접 subscribe()하지 않고 뷰 바인딩 라이브러리 (예 : React Redux)를 사용합니다.
+// 그러나 localStorage에서 현재 상태를 유지하는 것이 또한 편리 할 수 있습니다.
 
 store.subscribe(() =>
   console.log(store.getState())
 )
 
-// The only way to mutate the internal state is to dispatch an action.
-// The actions can be serialized, logged or stored and later replayed.
+// 내부 상태를 변경하는 유일한 방법은 작업을 전달하는 것입니다.
+// dispatch(`action`)
+// action 들은 직력화될 수도 있고, 로깅 및 저장되어 Replay 될 수 있습니다.
 store.dispatch({ type: 'INCREMENT' })
 // 1
 store.dispatch({ type: 'INCREMENT' })
@@ -131,13 +129,14 @@ store.dispatch({ type: 'DECREMENT' })
 // 1
 ```
 
-Instead of mutating the state directly, you specify the mutations you want to happen with plain objects called *actions*. Then you write a special function called a *reducer* to decide how every action transforms the entire application's state.
+상태를 직접 변경하는 대신 *`actions`* 라는 일반 객체를 사용하여 발생시키고 자하는 상태변화를 설정합니다. 그런 다음 *`reducer`* 라는 특수 함수를 작성합니다. 이 특수 함수(`reducer`)는 모든 작업이 전체 응용 프로그램의 상태를 변환하는 방법을 결정합니다.
 
-If you're coming from Flux, there is a single important difference you need to understand. Redux doesn't have a Dispatcher or support many stores. Instead, there is just a single store with a single root reducing function. As your app grows, instead of adding stores, you split the root reducer into smaller reducers independently operating on the different parts of the state tree. This is exactly like how there is just one root component in a React app, but it is composed out of many small components.
+Flux와 비교할경우, 이해해야 할 중요한 차이점이 하나 있습니다. Redux에는 `Dispatcher` 나 많은 `Store`를 지원하지 않습니다. 대신 단일 루트 축소 기능을 가진 단일 `Store`가 있습니다. 앱이 커지면 `Store`을 추가하는 대신 루트 트리머를 상태 트리의 다른 부분에서 독립적으로 작동하는 작은 `Reducer` 로 분리합니다. 이는 React 앱에 하나의 루트 `Component`가 있는 것과 동일하지만, 많은 작은 `Component`로 구성됩니다.
 
-This architecture might seem like an overkill for a counter app, but the beauty of this pattern is how well it scales to large and complex apps. It also enables very powerful developer tools, because it is possible to trace every mutation to the action that caused it. You can record user sessions and reproduce them just by replaying every action.
+이 아키텍쳐는 `Counter 앱` 에는 너무 오버스펙일 수 있습니다. 그러나, 크고 복잡한 앱들의 경우 이 디자인 패턴은 높은 효율을 보여줄 것입니다. 또한, 이 패턴은 모든 상태변화에 따른 추적이 가능하여, 강력한 개발툴을 제공할 수 있습니다. 
+여러분은 유저의 세션을 저장하고, 모든 액션들을 재현할 수 있습니다. 
 
-### Learn Redux from Its Creator
+### 창시자에게 Redux 배우기
 
 [Getting Started with Redux](https://egghead.io/series/getting-started-with-redux) is a video course consisting of 30 videos narrated by Dan Abramov, author of Redux. It is designed to complement the “Basics” part of the docs while bringing additional insights about immutability, testing, Redux best practices, and using Redux with React. **This course is free and will always be.**
 
@@ -162,39 +161,39 @@ So, what are you waiting for?
 
 If you enjoyed my course, consider supporting Egghead by [buying a subscription](https://egghead.io/pricing). Subscribers have access to the source code of every example in my videos and tons of advanced lessons on other topics, including JavaScript in depth, React, Angular, and more. Many [Egghead instructors](https://egghead.io/instructors) are also open source library authors, so buying a subscription is a nice way to thank them for the work that they've done.
 
-### Documentation
+### 문서
 
-* [Introduction](http://redux.js.org/docs/introduction/index.html)
-* [Basics](http://redux.js.org/docs/basics/index.html)
-* [Advanced](http://redux.js.org/docs/advanced/index.html)
-* [Recipes](http://redux.js.org/docs/recipes/index.html)
-* [FAQ](http://redux.js.org/docs/FAQ.html)
-* [Troubleshooting](http://redux.js.org/docs/Troubleshooting.html)
-* [Glossary](http://redux.js.org/docs/Glossary.html)
-* [API Reference](http://redux.js.org/docs/api/index.html)
+* [소개](https://madist.gitbooks.io/redux-ko/content/docs/introduction/index.html)
+* [기본](https://madist.gitbooks.io/redux-ko/content/docs/basics/index.html)
+* [고급](https://madist.gitbooks.io/redux-ko/content/docs/advanced/index.html)
+* [따라하기](https://madist.gitbooks.io/redux-ko/content/docs/recipes/index.html)
+* [FAQ](https://madist.gitbooks.io/redux-ko/content/docs/FAQ.html)
+* [문제해결](https://madist.gitbooks.io/redux-ko/content/docs/Troubleshooting.html)
+* [용어해설](https://madist.gitbooks.io/redux-ko/content/docs/Glossary.html)
+* [API 문서](https://madist.gitbooks.io/redux-ko/content/docs/api/index.html)
 
 For PDF, ePub, and MOBI exports for offline reading, and instructions on how to create them, please see: [paulkogel/redux-offline-docs](https://github.com/paulkogel/redux-offline-docs).
 
 For Offline docs, please see: [devdocs](http://devdocs.io/redux/)
 
-### Examples
+### 예제
 
 Almost all examples have a corresponding CodeSandbox sandbox. This is an interactive version of the code that you can play with online.
 
-* [Counter Vanilla](http://redux.js.org/docs/introduction/Examples.html#counter-vanilla) ([source](https://github.com/reactjs/redux/tree/master/examples/counter-vanilla))
-* [Counter](http://redux.js.org/docs/introduction/Examples.html#counter) ([source](https://github.com/reactjs/redux/tree/master/examples/counter), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/counter))
-* [Todos](http://redux.js.org/docs/introduction/Examples.html#todos) ([source](https://github.com/reactjs/redux/tree/master/examples/todos), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/todos))
-* [Todos with Undo](http://redux.js.org/docs/introduction/Examples.html#todos-with-undo) ([source](https://github.com/reactjs/redux/tree/master/examples/todos-with-undo), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/todos-with-undo))
-* [TodoMVC](http://redux.js.org/docs/introduction/Examples.html#todomvc) ([source](https://github.com/reactjs/redux/tree/master/examples/todomvc), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/todomvc))
-* [Shopping Cart](http://redux.js.org/docs/introduction/Examples.html#shopping-cart) ([source](https://github.com/reactjs/redux/tree/master/examples/shopping-cart), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/shopping-cart))
-* [Tree View](http://redux.js.org/docs/introduction/Examples.html#tree-view) ([source](https://github.com/reactjs/redux/tree/master/examples/tree-view), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/tree-view))
-* [Async](http://redux.js.org/docs/introduction/Examples.html#async) ([source](https://github.com/reactjs/redux/tree/master/examples/async), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/async))
-* [Universal](http://redux.js.org/docs/introduction/Examples.html#universal) ([source](https://github.com/reactjs/redux/tree/master/examples/universal))
-* [Real World](http://redux.js.org/docs/introduction/Examples.html#real-world) ([source](https://github.com/reactjs/redux/tree/master/examples/real-world), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/real-world))
+* [Counter Vanilla](https://madist.gitbooks.io/redux-ko/content/docs/introduction/Examples.html#counter-vanilla) ([source](https://github.com/reactjs/redux/tree/master/examples/counter-vanilla))
+* [Counter](https://madist.gitbooks.io/redux-ko/content/docs/introduction/Examples.html#counter) ([source](https://github.com/reactjs/redux/tree/master/examples/counter), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/counter))
+* [Todos](https://madist.gitbooks.io/redux-ko/content/docs/introduction/Examples.html#todos) ([source](https://github.com/reactjs/redux/tree/master/examples/todos), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/todos))
+* [Todos with Undo](https://madist.gitbooks.io/redux-ko/content/docs/introduction/Examples.html#todos-with-undo) ([source](https://github.com/reactjs/redux/tree/master/examples/todos-with-undo), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/todos-with-undo))
+* [TodoMVC](https://madist.gitbooks.io/redux-ko/content/docs/introduction/Examples.html#todomvc) ([source](https://github.com/reactjs/redux/tree/master/examples/todomvc), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/todomvc))
+* [Shopping Cart](https://madist.gitbooks.io/redux-ko/content/docs/introduction/Examples.html#shopping-cart) ([source](https://github.com/reactjs/redux/tree/master/examples/shopping-cart), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/shopping-cart))
+* [Tree View](https://madist.gitbooks.io/redux-ko/content/docs/introduction/Examples.html#tree-view) ([source](https://github.com/reactjs/redux/tree/master/examples/tree-view), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/tree-view))
+* [Async](https://madist.gitbooks.io/redux-ko/content/docs/introduction/Examples.html#async) ([source](https://github.com/reactjs/redux/tree/master/examples/async), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/async))
+* [Universal](https://madist.gitbooks.io/redux-ko/content/docs/introduction/Examples.html#universal) ([source](https://github.com/reactjs/redux/tree/master/examples/universal))
+* [Real World](https://madist.gitbooks.io/redux-ko/content/docs/introduction/Examples.html#real-world) ([source](https://github.com/reactjs/redux/tree/master/examples/real-world), [sandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/real-world))
 
 If you're new to the NPM ecosystem and have troubles getting a project up and running, or aren't sure where to paste the gist above, check out [simplest-redux-example](https://github.com/jackielii/simplest-redux-example) that uses Redux together with React and Browserify.
 
-### Discussion
+### 토의
 
 Join the [#redux](https://discord.gg/0ZcbPKXt5bZ6au5t) channel of the [Reactiflux](http://www.reactiflux.com) Discord community.
 
@@ -213,7 +212,7 @@ Join the [#redux](https://discord.gg/0ZcbPKXt5bZ6au5t) channel of the [Reactiflu
 
 Special thanks to [Jamie Paton](http://jdpaton.github.io) for handing over the `redux` NPM package name.
 
-### Logo
+### 로고
 
 You can find the official logo [on GitHub](https://github.com/reactjs/redux/tree/master/logo).
 
