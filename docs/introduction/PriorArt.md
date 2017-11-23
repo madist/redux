@@ -25,11 +25,11 @@ Flux와 보다 더 중요한 차이점이라면, Redux는 직접적으로 상태
 
 Redux와는 달리, Elm은 언어이므로 purity, 정적유형지정, out of the box immutability 및 패턴 일치 (`case` 표현식 사용)와 같은 여러 가지 이점을 누릴 수 있습니다. `Elm`언어를 이용하여 개발하지 않더라도, 한번 아키텍쳐를 읽고, 사용해 보세요. 우리는 Redux에서 영감을 얻으 려합니다. Elm의 정적 타이핑에 더 가까워 질 수있는 한 가지 방법은 [Flow와 같은 점진적인 타이핑 솔루션을 사용하는 것](https://github.com/reactjs/redux/issues/290)입니다.
 
-### 불변
+### Immutable
 
-[Immutable](https://facebook.github.io/immutable-js) 은 영속 데이터 구조를 구현한 자바스크립트 라이브러리입니다. It is performant and has an idiomatic JavaScript API.
+[Immutable](https://facebook.github.io/immutable-js) 은 영속 데이터 구조를 구현한 자바스크립트 라이브러리입니다. 이 라이브러리는 성능이 좋고, 많은 이들이 사용하고 있다.
 
-Immutable and most similar libraries are orthogonal to Redux. Feel free to use them together!
+Immutable 과 그와 비슷한 라이브러리들은 `Redux`와 직교(?) 한다. 함께 사용해도 문제 없다.
 
 **Redux doesn't care *how* you store the state—it can be a plain object, an Immutable object, or anything else.** You'll probably want a (de)serialization mechanism for writing universal apps and hydrating their state from the server, but other than that, you can use any data storage library *as long as it supports immutability*. For example, it doesn't make sense to use Backbone for Redux state, because Backbone models are mutable.
 
